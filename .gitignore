@@ -1,0 +1,122 @@
+# ========================================
+# GITIGNORE - Production Ready
+# ========================================
+
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+frontend/.env.production
+frontend/.turbo
+frontend/build/
+
+# Legacy frontend folder (during transition)
+web-app/node_modules/
+web-app/.next/
+web-app/out/
+web-app/.env.local
+web-app/.env.production
+
+# Backend (Python/FastAPI)
+backend/__pycache__/
+backend/**/*.pyc
+backend/.venv/
+backend/env/
+backend/venv/
+backend/.env
+backend/.pytest_cache/
+backend/**/__pycache__/
+backend/*.egg-info/
+
+# Legacy backend folder (during transition)
+api/__pycache__/
+api/**/*.pyc
+api/.venv/
+api/.env
+api/.pytest_cache/
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment Variables
+.env
+.env.local
+.env.production
+.env.development
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.log
+*.swp
+*.swo
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Automation Scripts & Documentation (keep local only)
+sync_env.py
+sync_env.py
+fix_imports.py
+BACKEND_VERIFICATION.md
+NEONTASK_REBRAND.md
+AUDIT_COMPLETE.md
+VERCEL_QUICK_REFERENCE.md
+fix_imports.py
+*_VERIFICATION.md
+*_REBRAND.md
+*_COMPLETE.md
+*_DEPLOYMENT.md
+*_QUICK_REFERENCE.md
+*_FIX.md
+*_GUIDE.md
+*_PLAN.md
+*_SCRIPT.md
+*_SUMMARY.md
+temp_logs/
+install.log
+backend_final.log
+repo_details.txt
+test_result.txt
+test_file.txt
+
+# Phase artifacts
+phase*-summary.png
+specs/
+history/
+scripts/
+dapr/
+helm/
+k8s/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.nyc_output/
+.pytest_cache/
+
+# Misc
+.vercel
+.turbo

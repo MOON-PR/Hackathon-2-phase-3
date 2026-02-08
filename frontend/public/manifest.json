@@ -1,0 +1,21 @@
+{
+    "name": "NEONTASK",
+    "short_name": "NEONTASK",
+    "description": "Cyberpunk Task Manager - Sync your workflow in the digital realm",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0A0A0A",
+    "theme_color": "#00F3FF",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicon.ico",
+            "sizes": "32x32 16x16",
+            "type": "image/x-icon"
+        }
+    ]
+}

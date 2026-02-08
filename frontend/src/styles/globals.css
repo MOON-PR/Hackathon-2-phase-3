@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles - Cyberpunk/Neon Theme */
+:root {
+    --neon-cyan: #00f3ff;
+    --neon-orange: #ff4800;
+    --deep-black: #000000;
+    --dark-gray: #111111;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    @apply bg-black text-white antialiased;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overscroll-behavior: none;
+    font-family: 'Outfit', sans-serif;
+    background-image:
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Safe area for notch devices */
+.safe-top {
+    padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-black;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-cyan-400;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyan-300;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes slideSnap {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-glitch:hover {
+    animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+.animate-slideSnap {
+    animation: slideSnap 0.3s ease-out forwards;
+}
+
+/* Staggered animations */
+.stagger-1 {
+    animation-delay: 0.1s;
+}
+
+.stagger-2 {
+    animation-delay: 0.2s;
+}
+
+.stagger-3 {
+    animation-delay: 0.3s;
+}
+
+.stagger-4 {
+    animation-delay: 0.4s;
+}
+
+.stagger-5 {
+    animation-delay: 0.5s;
+}
+
+/* Cyberpunk Components */
+.cyber-card {
+    @apply bg-black border border-gray-800 p-6 relative transition-all duration-300;
+}
+
+.cyber-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background: #00f3ff;
+    transition: height 0.3s ease;
+}
+
+.cyber-card:hover::before {
+    height: 100%;
+}
+
+.cyber-card:hover {
+    @apply border-cyan-400;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+/* Cyber Text */
+.text-neon-cyan {
+    color: #00f3ff;
+    text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+}
+
+.text-neon-orange {
+    color: #ff4800;
+    text-shadow: 0 0 5px rgba(255, 72, 0, 0.5);
+}
+
+/* Buttons */
+.btn-primary {
+    @apply px-6 py-3 bg-cyan-500 text-black font-bold uppercase tracking-wider transition-all duration-300;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btn-primary:hover {
+    @apply bg-cyan-400;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    @apply px-6 py-3 bg-transparent border border-gray-600 text-gray-300 font-bold uppercase tracking-wider transition-all duration-300;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+.btn-secondary:hover {
+    @apply border-cyan-400 text-cyan-400;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+/* Form Elements */
+.input-field {
+    @apply w-full px-4 py-3 bg-gray-900 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-300;
+    border-radius: 0;
+}
+
+/* Utilities */
+@layer utilities {
+    .text-responsive {
+        @apply text-sm sm:text-base md:text-lg;
+    }
+}

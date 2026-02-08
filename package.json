@@ -1,0 +1,27 @@
+{
+    "name": "todo-hackathon",
+    "version": "1.0.0",
+    "description": "AI-Powered Todo App with Next.js and FastAPI",
+    "scripts": {
+        "dev:frontend": "cd frontend && npm run dev",
+        "dev:backend": "cd backend && python -m uvicorn backend.api.v1.api:app --reload --port 8000",
+        "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+        "build:frontend": "cd frontend && npm run build",
+        "start:frontend": "cd frontend && npm start",
+        "install:frontend": "cd frontend && npm install",
+        "install:backend": "cd backend && pip install -r requirements.txt",
+        "install:all": "npm run install:frontend && npm run install:backend",
+        "sync:env": "python sync_env.py"
+    },
+    "keywords": [
+        "todo",
+        "ai",
+        "nextjs",
+        "fastapi"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
