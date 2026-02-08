@@ -25,7 +25,7 @@ NEONTASK is a next-generation, AI-powered task management system built with a fu
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/neontask.git
+   git clone https://github.com/MOON-PR/Hackathon-2-phase-3.git
    cd neontask
    ```
 
